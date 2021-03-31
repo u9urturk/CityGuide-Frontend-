@@ -15,6 +15,7 @@ import {FormsModule,ReactiveFormsModule} from '@angular/forms'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import {ExModule} from './ex/ex.module'
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ValueComponent } from './components/value/value.component';
 import {HttpClientModule} from '@angular/common/http';
@@ -54,6 +55,7 @@ export class CustomHammerConfig extends HammerGestureConfig  {
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ExModule,
     HttpClientModule,
     JwtModule,
     BrowserAnimationsModule,
@@ -66,7 +68,7 @@ export class CustomHammerConfig extends HammerGestureConfig  {
     
 
   ],
-  exports:[CommonModule, BrowserAnimationsModule,ReactiveFormsModule],
+  exports:[CommonModule, BrowserAnimationsModule],
   providers: [
     { provide: HAMMER_GESTURE_CONFIG, useClass: CustomHammerConfig }
   ],
