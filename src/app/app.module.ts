@@ -23,7 +23,8 @@ import { NavComponent } from './components/nav/nav.component';
 import { CityComponent } from './components/city/city.component';
 import { CityDetailComponent } from './components/city/city-detail/city-detail.component';
 import { CityAddComponent } from './components/city/city-add/city-add.component'
-import { AlertifyService} from './services/alertify.service'
+import { NgxEditorModule } from 'ngx-editor';
+
 
 @Injectable()
 export class CustomHammerConfig extends HammerGestureConfig  {
@@ -60,11 +61,12 @@ export class CustomHammerConfig extends HammerGestureConfig  {
     LightboxModule,
     FontAwesomeModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxEditorModule
     
 
   ],
-  exports:[CommonModule, BrowserAnimationsModule],
+  exports:[CommonModule, BrowserAnimationsModule,ReactiveFormsModule],
   providers: [
     { provide: HAMMER_GESTURE_CONFIG, useClass: CustomHammerConfig }
   ],
@@ -72,3 +74,4 @@ export class CustomHammerConfig extends HammerGestureConfig  {
 })
 export class AppModule { }
 export class NgxGalleryModule{ }
+
